@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ahmad | BS Mathematics Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                            dark: '#0f172a',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(34, 197, 94, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    AA
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white block">Ali Ahmad</span>
+                    <span class="text-xs text-brand-400 font-medium block">BS Mathematics | BZU</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+                <a href="#education" class="hover:text-brand-400 transition-colors">Education & GPA</a>
+                <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-brand-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button onclick="downloadResume()" class="hidden sm:inline-flex items-center space-x-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/20 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download CV</span>
+                </button>
+                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">About</a>
+            <a href="#education" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Education & GPA</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Projects</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Contact</a>
+            <button onclick="downloadResume()" class="w-full mt-2 flex items-center justify-center space-x-2 bg-brand-600 text-white text-sm font-semibold py-3 rounded-xl">
+                <i class="fa-solid fa-download"></i>
+                <span>Download Portfolio as HTML</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-32 pb-16 flex items-center relative overflow-hidden">
+        <!-- Background Glow Accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-950 border border-brand-800 text-brand-400 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Available for Opportunities & Collaborations</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">Ali Ahmad</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        A dedicated BS Mathematics scholar at <span class="text-white font-semibold">Bahauddin Zakariya University (BZU)</span>, currently in my 3rd semester with an exceptional academic record and a strong foundation in analytical thinking, computational tools, and problem-solving.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all transform hover:-translate-y-0.5">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="glass-card hover:bg-slate-800 text-slate-200 font-semibold px-8 py-3.5 rounded-xl transition-all">
+                            View Academic Work
+                        </a>
+                    </div>
+
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">3.9+ / 4.0</p>
+                            <p class="text-xs text-slate-400 font-medium mt-1">Current GPA</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">3rd</p>
+                            <p class="text-xs text-slate-400 font-medium mt-1">Semester (BZU)</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">100%</p>
+                            <p class="text-xs text-slate-400 font-medium mt-1">Dedication</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-600 to-emerald-400 rounded-3xl rotate-6 opacity-25 blur-xl"></div>
+                        <div class="relative w-full h-full glass-card rounded-3xl p-6 flex flex-col justify-between shadow-2xl border border-slate-700/50">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-brand-500/20 text-brand-400 text-xs font-bold rounded-lg">BZU Scholar</span>
+                                <i class="fa-solid fa-graduation-cap text-2xl text-brand-400"></i>
+                            </div>
+                            <div class="text-center space-y-2 my-auto">
+                                <div class="w-24 h-24 bg-slate-800 rounded-full mx-auto flex items-center justify-center text-3xl font-bold text-brand-400 shadow-inner border border-slate-700">
+                                    AA
+                                </div>
+                                <h3 class="text-xl font-bold text-white">Ali Ahmad</h3>
+                                <p class="text-sm text-slate-400">Department of Mathematics</p>
+                            </div>
+                            <div class="bg-slate-900/80 rounded-xl p-3 flex items-center justify-between text-xs text-slate-300">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-400"></i> Multan, Pakistan</span>
+                                <span class="text-brand-400 font-semibold">Active Student</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-slate-950/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-400">Personal Profile</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">About Me</h3>
+                <p class="text-slate-400 text-base">Get to know my academic background, career objectives, and what drives my passion for mathematical sciences.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">Academic Mission</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        To master advanced mathematical theories, abstract algebra, and differential equations, applying rigorous analytical models to real-world scientific and computational problems.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">Core Strengths</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Exceptional logical reasoning, high proficiency in complex calculus, linear algebra, numerical analysis, and strong dedication to maintaining top-tier academic performance.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">Future Aspirations</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Aiming to pursue higher research in applied mathematics, data science, or cryptography, bridging pure mathematical concepts with modern technological innovations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & GPA Section -->
+    <section id="education" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-400">Academic Track Record</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Education & GPA</h3>
+                <p class="text-slate-400 text-base">My institutional background and ongoing academic journey at Bahauddin Zakariya University.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- University Card -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-l-4 border-brand-500">
+                    <div class="absolute top-6 right-6 px-3 py-1 bg-brand-500/20 text-brand-400 text-xs font-bold rounded-lg">
+                        Current
+                    </div>
+                    <span class="text-xs font-semibold text-brand-400 tracking-wider uppercase">2025 – 2029</span>
+                    <h4 class="text-2xl font-bold text-white mt-2">BS Mathematics</h4>
+                    <p class="text-slate-300 font-medium text-sm mt-1">Bahauddin Zakariya University (BZU), Multan</p>
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Current Status</span>
+                            <span class="text-white font-bold text-sm">3rd Semester</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">Performance</span>
+                            <span class="text-brand-400 font-extrabold text-lg">Excellent GPA (3.9+)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediate / School Card -->
+                <div class="glass-card p-8 rounded-3xl relative overflow-hidden border-l-4 border-slate-600">
+                    <div class="absolute top-6 right-6 px-3 py-1 bg-slate-800 text-slate-300 text-xs font-bold rounded-lg">
+                        Completed
+                    </div>
+                    <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">Higher Education</span>
+                    <h4 class="text-2xl font-bold text-white mt-2">Intermediate (Pre-Engineering / ICS)</h4>
+                    <p class="text-slate-300 font-medium text-sm mt-1">College Education Board</p>
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Major Focus</span>
+                            <span class="text-white font-bold text-sm">Mathematics & Physics</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">Standing</span>
+                            <span class="text-white font-extrabold text-sm">Top Grade Marks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-950/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-400">Expertise & Competencies</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Skills & Capabilities</h3>
+                <p class="text-slate-400 text-base">Combining core mathematical rigor with modern digital and analytical tools.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Pure & Applied Math</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Calculus, Linear Algebra, Ordinary Differential Equations, and Real Analysis.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Analytical Problem Solving</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Logical deduction, proof writing, theorem demonstration, and quantitative modeling.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Computational Tools</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Basic programming, LaTeX document preparation, scientific calculators, and spreadsheets.</p>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Soft Skills</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">Time management, academic presentation, teamwork, and peer tutoring in mathematics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Academic Focus Section -->
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-400">Academic Works</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Key Studies & Focus Areas</h3>
+                <p class="text-slate-400 text-base">Highlights of specialized mathematical domains and assignments undertaken during my BS studies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-500/20 text-brand-400 text-xs font-bold rounded-lg">Semester 3</span>
+                            <i class="fa-solid fa-square-root-variable text-brand-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Advanced Linear Systems</h4>
+                        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                            Detailed analysis of matrix transformations, eigenvalues, eigenvectors, and application of Gauss-Jordan elimination in physical network circuits.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 text-xs text-brand-400 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Grade: A+ Equivalent
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-500/20 text-brand-400 text-xs font-bold rounded-lg">Semester 2</span>
+                            <i class="fa-solid fa-infinity text-brand-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Ordinary Differential Equations</h4>
+                        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                            Solving first and second-order differential equations modeling exponential growth, decay, and harmonic oscillations.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 text-xs text-brand-400 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Grade: A+ Equivalent
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-500/20 text-brand-400 text-xs font-bold rounded-lg">Semester 1</span>
+                            <i class="fa-solid fa-chart-area text-brand-400 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Calculus & Analytical Geometry</h4>
+                        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                            Comprehensive study of limits, continuity, multi-variable calculus, partial derivatives, and conic sections.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 text-xs text-brand-400 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle"></i> Grade: A+ Equivalent
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-950/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-400">Get In Touch</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Contact Ali Ahmad</h3>
+                <p class="text-slate-400 text-base">Feel free to reach out for academic discussions, collaborative projects, or professional opportunities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-medium">Email Address</span>
+                            <a href="mailto:aliahmad@bzu.edu.pk" class="text-white font-semibold hover:text-brand-400 transition-colors text-sm sm:text-base">aliahmad@bzu.edu.pk</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-medium">University Location</span>
+                            <span class="text-white font-semibold text-sm sm:text-base">BZU University, Multan, Pakistan</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-slate-400 block font-medium">Program & Semester</span>
+                            <span class="text-white font-semibold text-sm sm:text-base">BS Mathematics (3rd Semester)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleFormSubmit(event)" class="glass-card p-8 rounded-3xl space-y-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                            <input type="text" required placeholder="Enter your name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Email</label>
+                            <input type="email" required placeholder="Enter your email address" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Message</label>
+                            <rows="4" required placeholder="Write your message here..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm resize-none h-32" as="textarea"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-600/30 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+            <p>&copy; 2026 Ali Ahmad. All Rights Reserved. BS Mathematics Student at BZU Multan.</p>
+            <div class="flex justify-center space-x-6 text-lg">
+                <a href="#home" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#home" class="hover:text-brand-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="#home" class="hover:text-brand-400 transition-colors"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent successfully.');
+            e.target.reset();
+        }
+
+        // Download Portfolio as a Single HTML File Function
+        function downloadResume() {
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Ali_Ahmad_Portfolio.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
